@@ -6,14 +6,15 @@
     "scripts": {
         "build": "NODE_ENV=production webpack",
         "build:dev": "webpack",
-        "dev": "webpack-dev-server --content-base public --hot"
+        "dev": "webpack-dev-server --content-base public --hot --open"
     },
     "dependencies": {
         "@emotion/core": "^10.0.7",
         "@emotion/styled": "^10.0.7",
         "emotion-theming": "^10.0.7",
         "react": "^16.8.1",
-        "react-dom": "^16.8.1"
+        "react-dom": "^16.8.1",
+        "react-ink": "^6.4.0"
     },
     "devDependencies": {
         "@babel/core": "^7.2.2",
