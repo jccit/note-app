@@ -8,16 +8,12 @@ const HeaderContainer = styled.header`
     left: 0;
     width: 100%;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    padding: 14px 20px;
+    padding: 14px 25px;
     height: 52px;
     background: ${props => props.theme.colors.background};
     display: flex;
     justify-content: space-between;
     z-index: 100;
-
-    @media (max-width: 500px) {
-        padding: 14px 10px;
-    }
 `;
 
 const Title = styled.h1`

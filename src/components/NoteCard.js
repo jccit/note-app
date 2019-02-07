@@ -10,6 +10,10 @@ const Card = styled.article`
     background-color: ${props => props.theme.colors.background};
     position: relative;
     margin-bottom: 10px;
+
+    @media (max-width: 500px) {
+        padding: 15px;
+    }
 `;
 
 class NoteCard extends Component {
