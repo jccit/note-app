@@ -4,7 +4,7 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "build": "NODE_ENV=production webpack",
+        "build": "NODE_ENV=production webpack && cp -R ./public/* ./dist",
         "build:dev": "webpack",
         "dev": "webpack-dev-server --content-base public --hot --open"
     },

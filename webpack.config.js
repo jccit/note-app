@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     mode: process.env.NODE_ENV == "production" ? "production" : "development",
     entry: { main: "./src/main.js" },
@@ -5,7 +7,8 @@ module.exports = {
     output: {
         filename: "[name].js",
         chunkFilename: "[name].js",
-        publicPath: "/build/"
+        publicPath: "/build/",
+        path: path.resolve(__dirname, 'dist/build')
     },
 
     optimization: {
