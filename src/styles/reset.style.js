@@ -1,7 +1,5 @@
-import { css } from '@emotion/core';
-
 export default function(theme) {
-    return css`
+    return `
         * {
             margin: 0;
             padding: 0;
@@ -20,6 +18,12 @@ export default function(theme) {
             line-height: 1;
             margin: 0;
             padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: ${theme.colors.text};
+            outline: 0;
         }
     `;
 }

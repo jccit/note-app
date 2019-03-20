@@ -1,12 +1,15 @@
 import React from "react";
 import { hot } from "react-hot-loader";
-import { Global } from '@emotion/core';
+import { Global, css } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import ResetStyles from './styles/reset.style';
 
 import Header from './components/Header';
-import NoteList from './components/NoteList';
+
+import Home from './pages/Home';
+import Note from './pages/Note';
 
 const themes = {
     light: {
@@ -33,7 +36,7 @@ class App extends React.Component {
 
         this.state = {
             theme: themes[selectedTheme],
-            selectedTheme,
+            selectedTheme
         };
     }
 
@@ -53,9 +56,14 @@ class App extends React.Component {
     render() {
         return (
             <ThemeProvider theme={this.state.theme}>
-                <Global styles={ResetStyles(this.state.theme)} />
+                <Global styles={css(ResetStyles(this.state.theme))} />
                 <Header title="Notes" changeTheme={() => this.switchTheme()} />
-                <NoteList />
+                <BrowserRouter>
+                    <div>
+                        <Route path="/" exact component={Home} />
+                        <Route path="/note/:id" component={Note} />
+                    </div>
+                </BrowserRouter>
             </ThemeProvider>
         )
     }

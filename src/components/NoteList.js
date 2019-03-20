@@ -7,19 +7,25 @@ class NoteList extends Component {
     renderCards() {
         const output = [];
 
-        for (let i = 0; i < 20; i++) {
-            output.push(<NoteCard key={i} />);
+        let i = 0;
+        for (const note of this.props.notes) {
+            output.push(<NoteCard key={i} note={note} />);
+            i++;
         }
 
         return output;
     }
 
     render() {
-        return (
-            <Container>
-                { this.renderCards() }
-            </Container>
-        )
+        if (this.props.notes.length > 0) {
+            return (
+                <Container>
+                    { this.renderCards() }
+                </Container>
+            );
+        }
+
+        return null;
     }
 }
 

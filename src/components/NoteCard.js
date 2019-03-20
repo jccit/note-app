@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import Ink from 'react-ink';
+import { Link } from 'react-router-dom';
 
 const Card = styled.article`
     padding: 20px;
@@ -20,9 +20,11 @@ class NoteCard extends Component {
     render() {
         return (
             <Card>
-                <h2>My Note</h2>
-                <p>This is some text for my note</p>
-                <Ink />
+                <Link to={`/note/${this.props.note.id}`}>
+                    <h2>{ this.props.note.title }</h2>
+                    <p>{ this.props.note.text }</p>
+                    <Ink />
+                </Link>
             </Card>
         )
     }
